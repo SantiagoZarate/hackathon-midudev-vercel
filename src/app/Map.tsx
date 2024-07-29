@@ -5,43 +5,55 @@ import { MapPinIcon } from "@/components/icons/MapPinIcon";
 import { APIResponse, Location } from "@/types/evento";
 import * as turf from "@turf/turf";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import MapBox, {
   Layer,
   MapMouseEvent,
+  MapRef,
   Marker,
   NavigationControl,
   Popup,
   Source,
 } from "react-map-gl";
+import cities from "../api/cities.json";
 
 interface Props {
   accessToken: string;
   locations: APIResponse;
 }
 
+interface Coordinate {
+  lat: number;
+  lng: number;
+}
+
 const latCenter = -34.472495652359854;
 const lngCenter = -58.68465843536305;
 
 export function Map({ accessToken, locations }: Props) {
+  const mapref = useRef<MapRef>(null);
   const [popupInfo, setPopupInfo] = useState<Location | null>(null);
+  const [location, setLocation] = useState<Coordinate | null>(null);
   const [viewState, setViewState] = useState({
     latitude: latCenter,
     longitude: lngCenter,
     zoom: 11,
+    pitch: 50,
   });
-
-  const [location, setLocation] = useState<{ lat: number; lng: number } | null>(
-    null
-  );
 
   const [circleRadius, setCircleRadius] = useState<{
     circle: any;
     line: any;
   } | null>(null);
 
+  const onChangeCity = ({ lat, lng }: Coordinate) => {
+    if (!mapref.current) return;
+    mapref.current.flyTo({ center: [lng, lat], zoom: 11, duration: 3000 });
+    setLocation({ lat, lng });
+  };
+
   const onCreateRadius = () => {
-    if (!location) return;
+    if (!location || !mapref.current) return;
 
     const radius = 5;
     const center = [location.lng, location.lat];
@@ -57,13 +69,17 @@ export function Map({ accessToken, locations }: Props) {
       circle,
       line: turf.lineString(circle.geometry.coordinates.flat()),
     });
+
+    mapref.current.flyTo({
+      center: [location.lng, location.lat],
+      zoom: 11,
+      duration: 3000,
+    });
   };
 
   const handleUpdateLocation = (event: MapMouseEvent) => {
-    const {
-      lngLat: { lat, lng },
-    } = event;
-    setLocation({ lat, lng });
+    const { lngLat } = event;
+    setLocation({ lat: lngLat.lat, lng: lngLat.lng });
   };
 
   const hotelPins = useMemo(
@@ -108,6 +124,7 @@ export function Map({ accessToken, locations }: Props) {
     <>
       <div className="h-96 w-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden">
         <MapBox
+          ref={mapref}
           {...viewState}
           onMove={(e) => setViewState(e.viewState)}
           mapboxAccessToken={accessToken}
@@ -129,7 +146,6 @@ export function Map({ accessToken, locations }: Props) {
                   type="fill"
                   paint={{
                     "fill-color": "hsla(0deg,0%,0%,0.4)",
-                    "fill-outline-color": "yellow",
                   }}
                 />
               </Source>
@@ -139,7 +155,8 @@ export function Map({ accessToken, locations }: Props) {
                   type="line"
                   paint={{
                     "line-color": "hsl(0deg,0%,80%)",
-                    "line-width": 2,
+                    "line-width": 1,
+                    "line-dasharray": [8, 8],
                   }}
                 />
               </Source>
@@ -170,6 +187,18 @@ export function Map({ accessToken, locations }: Props) {
           <NavigationControl />
         </MapBox>
       </div>
+      <section className="grid grid-cols-4 gap-1">
+        {cities.map((city) => (
+          <button
+            className="border border-neutral-800 rounded-lg text-xs py-1 hover:bg-neutral-800"
+            onClick={() =>
+              onChangeCity({ lat: city.latitud, lng: city.longitud })
+            }
+          >
+            {city.ciudad}
+          </button>
+        ))}
+      </section>
       <button
         className="border border-neutral-800 rounded-lg py-2"
         onClick={() => {}}
@@ -183,7 +212,6 @@ export function Map({ accessToken, locations }: Props) {
       >
         Generate circle radius
       </button>
-      {location && <p>{JSON.stringify(location, null, 2)}</p>}
     </>
   );
 }
