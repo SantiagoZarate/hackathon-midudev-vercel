@@ -20,7 +20,7 @@ export default async function Page() {
         </header>
         <Map
           accessToken={process.env.MAPBOX_ACCESS_TOKEN!}
-          locations={locations}
+          // locations={locations}
         />
       </section>
     </>
