@@ -18,7 +18,10 @@ export default async function Page() {
           </span>
           <p>Choose your next destination</p>
         </header>
-        <Map accessToken={process.env.MAPBOX_ACCESS_TOKEN!} />
+        <Map
+          accessToken={process.env.MAPBOX_ACCESS_TOKEN!}
+          locations={locations}
+        />
       </section>
     </>
   );

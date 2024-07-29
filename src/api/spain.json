@@ -1,0 +1,100 @@
+{
+  "zonas_de_interes": [
+    {
+      "nombre": "British Museum",
+      "descripcion": "Uno de los museos más grandes y completos del mundo, dedicado a la historia y la cultura humana.",
+      "distancia_aproximada_en_km": 1.5,
+      "ubicacion_exacta": "Great Russell St, London WC1B 3DG, Reino Unido",
+      "coordenadas": {
+        "lat": 51.519413,
+        "lng": -0.127033
+      }
+    },
+    {
+      "nombre": "Buckingham Palace",
+      "descripcion": "La residencia oficial de la monarquía británica en Londres.",
+      "distancia_aproximada_en_km": 1.2,
+      "ubicacion_exacta": "Westminster, London SW1A 1AA, Reino Unido",
+      "coordenadas": {
+        "lat": 51.501364,
+        "lng": -0.14189
+      }
+    },
+    {
+      "nombre": "London Eye",
+      "descripcion": "Una rueda de observación gigante en el South Bank del río Támesis.",
+      "distancia_aproximada_en_km": 1.4,
+      "ubicacion_exacta": "Riverside Building, County Hall, London SE1 7PB, Reino Unido",
+      "coordenadas": {
+        "lat": 51.503324,
+        "lng": -0.119543
+      }
+    },
+    {
+      "nombre": "Trafalgar Square",
+      "descripcion": "Una plaza pública en el centro de Londres, famosa por la columna de Nelson y los leones de bronce.",
+      "distancia_aproximada_en_km": 0.5,
+      "ubicacion_exacta": "Trafalgar Square, London WC2N 5DN, Reino Unido",
+      "coordenadas": {
+        "lat": 51.507878,
+        "lng": -0.128303
+      }
+    },
+    {
+      "nombre": "Big Ben y las Casas del Parlamento",
+      "descripcion": "Icono de Londres y sede del Parlamento del Reino Unido.",
+      "distancia_aproximada_en_km": 1.8,
+      "ubicacion_exacta": "Westminster, London SW1A 0AA, Reino Unido",
+      "coordenadas": {
+        "lat": 51.500729,
+        "lng": -0.124625
+      }
+    }
+  ],
+  "hoteles": [
+    {
+      "nombre": "The Ritz London",
+      "descripcion": "Un hotel de lujo en Piccadilly, conocido por su elegancia y servicio excepcional.",
+      "distancia_aproximada_en_km": 0.3,
+      "ubicacion_exacta": "150 Piccadilly, St. James's, London W1J 9BR, Reino Unido",
+      "coordenadas": {
+        "lat": 51.507268,
+        "lng": -0.141962
+      }
+    },
+    {
+      "nombre": "The Savoy Hotel",
+      "descripcion": "Un hotel icónico a orillas del río Támesis, famoso por su historia y su lujo.",
+      "distancia_aproximada_en_km": 1.0,
+      "ubicacion_exacta": "Strand, London WC2R 0EZ, Reino Unido",
+      "coordenadas": {
+        "lat": 51.510073,
+        "lng": -0.12056
+      }
+    },
+    {
+      "nombre": "The Langham, London",
+      "descripcion": "Un histórico hotel de cinco estrellas en el corazón del West End.",
+      "distancia_aproximada_en_km": 1.6,
+      "ubicacion_exacta": "1c Portland Pl, London W1B 1JA, Reino Unido",
+      "coordenadas": {
+        "lat": 51.51757,
+        "lng": -0.142028
+      }
+    }
+  ],
+  "eventos": [
+    {
+      "nombre": "Exposición en la Galería Nacional",
+      "descripcion": "Una nueva exposición de arte clásico y moderno en la Galería Nacional."
+    },
+    {
+      "nombre": "Concierto en el Royal Albert Hall",
+      "descripcion": "Un concierto de música clásica por la Orquesta Filarmónica de Londres."
+    },
+    {
+      "nombre": "Mercado de Navidad en Southbank",
+      "descripcion": "Un mercado festivo con puestos de comida, regalos y entretenimiento en Southbank."
+    }
+  ]
+}

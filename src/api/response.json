@@ -1,46 +1,66 @@
 {
   "zonas_de_interes": [
     {
-      "nombre": "Parque de Polvoranca",
-      "descripcion": "Un amplio parque en Leganés, ideal para pasear y disfrutar de la naturaleza. Ofrece senderos, áreas de picnic y lagos.",
-      "distancia_aproximada_en_km": 15,
-      "ubicacion_exacta": "Avenida de Polvoranca, 28914 Leganés, Madrid, España"
+      "nombre": "Parque Municipal Presidente Perón",
+      "descripcion": "Un amplio parque con áreas verdes, canchas de fútbol y zonas para picnic.",
+      "distancia_aproximada_en_km": 1.29,
+      "ubicacion_exacta": "José Manuel Estrada 1300, San Miguel, Provincia de Buenos Aires",
+      "coordenadas": {
+        "lat": -34.460922,
+        "lng": -58.686132
+      }
     },
     {
-      "nombre": "Museo de Aeronáutica y Astronáutica",
-      "descripcion": "Este museo en Getafe es perfecto para los amantes de la aviación, con una vasta colección de aeronaves y exposiciones históricas.",
-      "distancia_aproximada_en_km": 20,
-      "ubicacion_exacta": "Carretera del Barrio de la Fortuna, s/n, 28914 Getafe, Madrid, España"
+      "nombre": "Plaza de las Carretas",
+      "descripcion": "Una plaza pública con áreas de recreación y juegos para niños.",
+      "distancia_aproximada_en_km": 0.8,
+      "ubicacion_exacta": "Av. Dr. Ricardo Balbín 500, San Miguel, Provincia de Buenos Aires",
+      "coordenadas": {
+        "lat": -34.471142,
+        "lng": -58.693162
+      }
     },
     {
-      "nombre": "Parque Warner Madrid",
-      "descripcion": "Un parque temático situado en San Martín de la Vega, con diversas atracciones y espectáculos para todas las edades.",
-      "distancia_aproximada_en_km": 16,
-      "ubicacion_exacta": "A-4, Salida 22, 28330 San Martín de la Vega, Madrid, España"
+      "nombre": "Museo Histórico Municipal Brigadier General Juan Martín de Pueyrredón",
+      "descripcion": "Museo histórico en un edificio colonial con exposiciones sobre la historia local.",
+      "distancia_aproximada_en_km": 2.81,
+      "ubicacion_exacta": "Melo 3000, San Isidro, Provincia de Buenos Aires",
+      "coordenadas": {
+        "lat": -34.455823,
+        "lng": -58.707678
+      }
     }
   ],
   "hoteles": [
     {
-      "nombre": "Hotel NH Leganés",
-      "descripcion": "Un hotel cómodo y accesible, situado en Leganés, con buenas instalaciones y servicios.",
-      "distancia_aproximada_en_km": 15,
-      "ubicacion_exacta": "Calle de Esteban Terradas, 13, 28914 Leganés, Madrid, España"
+      "nombre": "Hotel del Parque",
+      "descripcion": "Hotel cómodo con instalaciones modernas y cerca de áreas verdes.",
+      "distancia_aproximada_en_km": 0.68,
+      "ubicacion_exacta": "Av. Presidente Perón 1234, San Miguel, Provincia de Buenos Aires",
+      "coordenadas": {
+        "lat": -34.466874,
+        "lng": -58.68752
+      }
     },
     {
-      "nombre": "Hotel Tryp Madrid Getafe Los Ángeles",
-      "descripcion": "Este hotel en Getafe es una opción popular, ofreciendo confort y cercanía a varios puntos de interés.",
-      "distancia_aproximada_en_km": 10,
-      "ubicacion_exacta": "Carretera de Andalucía, km 14,200, 28906 Getafe, Madrid, España"
+      "nombre": "Posada de San Isidro",
+      "descripcion": "Posada acogedora en el corazón de San Isidro, cerca de sitios históricos.",
+      "distancia_aproximada_en_km": 2.91,
+      "ubicacion_exacta": "Belgrano 2500, San Isidro, Provincia de Buenos Aires",
+      "coordenadas": {
+        "lat": -34.45763,
+        "lng": -58.710693
+      }
     }
   ],
   "eventos": [
     {
-      "nombre": "Archipiélago de los Desastres",
-      "descripcion": "Obra de teatro presentada por Isabel Vázquez, recomendada para mayores de 12 años. Tendrá lugar el 21 de octubre a las 20:00 en el Teatro Jaime Salom."
+      "nombre": "Feria de Artesanías",
+      "descripcion": "Feria local con artesanías, comidas típicas y actividades para toda la familia."
     },
     {
-      "nombre": "Un día fui una sandía",
-      "descripcion": "Espectáculo para niños a partir de 3 años, presentado por La Chica Charcos & The KatiuskasBand el 22 de octubre a las 18:00 en el Teatro Dulce Chacón."
+      "nombre": "Concierto al Aire Libre",
+      "descripcion": "Concierto gratuito en el parque con bandas locales y actividades culturales."
     }
   ]
 }
