@@ -1,92 +1,98 @@
-[
-  {
-    "pais": "Argentina",
-    "ciudad": "Buenos Aires",
-    "latitud": -34.6037,
-    "longitud": -58.3816
-  },
-  {
-    "pais": "Brasil",
-    "ciudad": "São Paulo",
-    "latitud": -23.5505,
-    "longitud": -46.6333
-  },
-  {
-    "pais": "España",
-    "ciudad": "Madrid",
-    "latitud": 40.4168,
-    "longitud": -3.7038
-  },
-  {
-    "pais": "Estados Unidos",
-    "ciudad": "Nueva York",
-    "latitud": 40.7128,
-    "longitud": -74.006
-  },
-  {
-    "pais": "Alemania",
-    "ciudad": "Berlín",
-    "latitud": 52.52,
-    "longitud": 13.405
-  },
-  {
-    "pais": "Japon",
-    "ciudad": "Tokio",
-    "latitud": 35.6895,
-    "longitud": 139.6917
-  },
-  {
-    "pais": "Indonesia",
-    "ciudad": "Yakarta",
-    "latitud": -6.2088,
-    "longitud": 106.8456
-  },
-  {
-    "pais": "Belgica",
-    "ciudad": "Bruselas",
-    "latitud": 50.8503,
-    "longitud": 4.3517
-  },
-  {
-    "pais": "Holanda",
-    "ciudad": "Ámsterdam",
-    "latitud": 52.3676,
-    "longitud": 4.9041
-  },
-  {
-    "pais": "Peru",
-    "ciudad": "Lima",
-    "latitud": -12.0464,
-    "longitud": -77.0428
-  },
-  {
-    "pais": "Italia",
-    "ciudad": "Roma",
-    "latitud": 41.9028,
-    "longitud": 12.4964
-  },
-  {
-    "pais": "Francia",
-    "ciudad": "París",
-    "latitud": 48.8566,
-    "longitud": 2.3522
-  },
-  {
-    "pais": "Portugal",
-    "ciudad": "Lisboa",
-    "latitud": 38.7167,
-    "longitud": -9.139
-  },
-  {
-    "pais": "Mexico",
-    "ciudad": "Ciudad de México",
-    "latitud": 19.4326,
-    "longitud": -99.1332
-  },
-  {
-    "pais": "Rusia",
-    "ciudad": "Moscú",
-    "latitud": 55.7558,
-    "longitud": 37.6173
-  }
-]
+{
+  "america": [
+    {
+      "pais": "Argentina",
+      "ciudad": "Buenos Aires",
+      "latitud": -34.6037,
+      "longitud": -58.3816
+    },
+    {
+      "pais": "Brasil",
+      "ciudad": "São Paulo",
+      "latitud": -23.5505,
+      "longitud": -46.6333
+    },
+    {
+      "pais": "Estados Unidos",
+      "ciudad": "Nueva York",
+      "latitud": 40.7128,
+      "longitud": -74.006
+    },
+    {
+      "pais": "Peru",
+      "ciudad": "Lima",
+      "latitud": -12.0464,
+      "longitud": -77.0428
+    },
+    {
+      "pais": "Mexico",
+      "ciudad": "Ciudad de México",
+      "latitud": 19.4326,
+      "longitud": -99.1332
+    }
+  ],
+  "europe": [
+    {
+      "pais": "España",
+      "ciudad": "Madrid",
+      "latitud": 40.4168,
+      "longitud": -3.7038
+    },
+    {
+      "pais": "Alemania",
+      "ciudad": "Berlín",
+      "latitud": 52.52,
+      "longitud": 13.405
+    },
+    {
+      "pais": "Belgica",
+      "ciudad": "Bruselas",
+      "latitud": 50.8503,
+      "longitud": 4.3517
+    },
+    {
+      "pais": "Holanda",
+      "ciudad": "Ámsterdam",
+      "latitud": 52.3676,
+      "longitud": 4.9041
+    },
+    {
+      "pais": "Italia",
+      "ciudad": "Roma",
+      "latitud": 41.9028,
+      "longitud": 12.4964
+    },
+    {
+      "pais": "Francia",
+      "ciudad": "París",
+      "latitud": 48.8566,
+      "longitud": 2.3522
+    },
+    {
+      "pais": "Portugal",
+      "ciudad": "Lisboa",
+      "latitud": 38.7167,
+      "longitud": -9.139
+    }
+  ],
+  "asia": [
+    {
+      "pais": "Japon",
+      "ciudad": "Tokio",
+      "latitud": 35.6895,
+      "longitud": 139.6917
+    },
+    {
+      "pais": "Indonesia",
+      "ciudad": "Yakarta",
+      "latitud": -6.2088,
+      "longitud": 106.8456
+    },
+    {
+      "pais": "Rusia",
+      "ciudad": "Moscú",
+      "latitud": 55.7558,
+      "longitud": 37.6173
+    }
+  ]
+}

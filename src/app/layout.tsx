@@ -14,7 +14,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-neutral-950 text-neutral-100`}>
-        <section className="min-h-[100dvh] grid  grid-rows-[1fr_auto] max-w-screen-lg mx-auto px-6 ">
+        <section className="min-h-[100dvh] grid  grid-rows-[1fr_auto] max-w-screen-2xl mx-auto px-6 ">
           <main className="pt-20 flex flex-col gap-4">{children}</main>
           <footer className="border-t border-border w-full pt-2 pb-6">
             this is a footer

@@ -83,6 +83,7 @@ export function useMap() {
   const onClearMap = () => {
     setLocation(null);
     setHoteles([]);
+    setPlaces([]);
     setCircleRadius(null);
   };
 
