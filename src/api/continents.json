@@ -1,0 +1,122 @@
+[
+  {
+    "name": "america",
+    "countries": [
+      {
+        "pais": "Argentina",
+        "ciudad": "Buenos Aires",
+        "imagen": "argentina-2.webp",
+        "lat": -34.6037,
+        "lng": -58.3816
+      },
+      {
+        "pais": "Brasil",
+        "ciudad": "São Paulo",
+        "imagen": "brasil.jpg",
+        "lat": -23.5505,
+        "lng": -46.6333
+      },
+      {
+        "pais": "Estados Unidos",
+        "ciudad": "Nueva York",
+        "imagen": "",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      {
+        "pais": "Peru",
+        "ciudad": "Lima",
+        "imagen": "",
+        "lat": -12.0464,
+        "lng": -77.0428
+      },
+      {
+        "pais": "Mexico",
+        "ciudad": "Ciudad de México",
+        "imagen": "",
+        "lat": 19.4326,
+        "lng": -99.1332
+      }
+    ]
+  },
+  {
+    "name": "europe",
+    "countries": [
+      {
+        "pais": "España",
+        "ciudad": "Madrid",
+        "imagen": "",
+        "lat": 40.4168,
+        "lng": -3.7038
+      },
+      {
+        "pais": "Alemania",
+        "ciudad": "Berlín",
+        "imagen": "germany.jpg",
+        "lat": 52.52,
+        "lng": 13.405
+      },
+      {
+        "pais": "Belgica",
+        "ciudad": "Bruselas",
+        "imagen": "",
+        "lat": 50.8503,
+        "lng": 4.3517
+      },
+      {
+        "pais": "Holanda",
+        "ciudad": "Ámsterdam",
+        "imagen": "holanda.jpg",
+        "lat": 52.3676,
+        "lng": 4.9041
+      },
+      {
+        "pais": "Italia",
+        "ciudad": "Roma",
+        "imagen": "italy.webp",
+        "lat": 41.9028,
+        "lng": 12.4964
+      },
+      {
+        "pais": "Francia",
+        "ciudad": "París",
+        "imagen": "france.webp",
+        "lat": 48.8566,
+        "lng": 2.3522
+      },
+      {
+        "pais": "Portugal",
+        "ciudad": "Lisboa",
+        "imagen": "",
+        "lat": 38.7167,
+        "lng": -9.139
+      }
+    ]
+  },
+  {
+    "name": "asia",
+    "countries": [
+      {
+        "pais": "Japon",
+        "ciudad": "Tokio",
+        "imagen": "china.jpg",
+        "lat": 35.6895,
+        "lng": 139.6917
+      },
+      {
+        "pais": "Indonesia",
+        "ciudad": "Yakarta",
+        "imagen": "indonesia.jpeg",
+        "lat": -6.2088,
+        "lng": 106.8456
+      },
+      {
+        "pais": "Rusia",
+        "ciudad": "Moscú",
+        "imagen": "",
+        "lat": 55.7558,
+        "lng": 37.6173
+      }
+    ]
+  }
+]

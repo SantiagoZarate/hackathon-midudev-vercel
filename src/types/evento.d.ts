@@ -17,3 +17,11 @@ export interface Location extends BaseLocation {
     lng: number;
   };
 }
+
+export interface Country {
+  pais: string;
+  ciudad: string;
+  lat: number;
+  lng: number;
+  imagen: string;
+}

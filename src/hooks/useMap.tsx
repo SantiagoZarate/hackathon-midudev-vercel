@@ -6,11 +6,7 @@ import * as turf from "@turf/turf";
 import { getHoteles, getPlaces } from "@/api/location";
 import { HotelIcon } from "lucide-react";
 import { MapPinIcon } from "@/components/icons/MapPinIcon";
-
-interface Coordinate {
-  lat: number;
-  lng: number;
-}
+import { Coordinate, GoToType } from "../types/coordinate";
 
 const latCenter = -34.472495652359854;
 const lngCenter = -58.68465843536305;
@@ -35,8 +31,7 @@ export function useMap() {
   } | null>(null);
 
   const onChangeCity = ({ lat, lng }: Coordinate) => {
-    if (!mapref.current) return;
-    mapref.current.flyTo({ center: [lng, lat], zoom: 11, duration: 3000 });
+    goTo({ lat, lng });
     setLocation({ lat, lng });
   };
 
@@ -56,11 +51,7 @@ export function useMap() {
       line: turf.lineString(circle.geometry.coordinates.flat()),
     });
 
-    mapref.current.flyTo({
-      center: [location.lng, location.lat],
-      zoom: 11,
-      duration: 3000,
-    });
+    goTo({ lat: location.lat, lng: location.lng });
 
     setIsPending(true);
     getHoteles().then((res) => {
@@ -125,6 +116,20 @@ export function useMap() {
     [places]
   );
 
+  const goTo = ({ lat, lng, zoom = 11 }: GoToType) => {
+    if (!mapref.current) return;
+
+    mapref.current.flyTo({
+      center: [lng, lat],
+      zoom,
+      duration: 3000,
+    });
+  };
+
+  const removePlace = (name: string) => {
+    setPlaces((prevState) => prevState.filter((p) => p.nombre !== name));
+  };
+
   return {
     mapref,
     popupInfo,
@@ -140,5 +145,9 @@ export function useMap() {
     placesPins,
     onClearMap,
     isPending,
+    hoteles,
+    places,
+    removePlace,
+    goTo,
   };
 }
