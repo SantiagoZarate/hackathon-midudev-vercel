@@ -25,30 +25,16 @@ export function Map({ accessToken }: Props) {
     setViewState,
     hotelPins,
     onClearMap,
+    placesPins,
+    isPending,
   } = useMap();
-
-  // const zonePins = useMemo(
-  //   () =>
-  //     locations.zonas_de_interes.map((zona) => (
-  //       <Marker
-  //         key={`marker-${zona.nombre}`}
-  //         longitude={zona.coordenadas.lng}
-  //         latitude={zona.coordenadas.lat}
-  //         anchor="bottom"
-  //         onClick={(e) => {
-  //           e.originalEvent.stopPropagation();
-  //           setPopupInfo(zona);
-  //         }}
-  //       >
-  //         <MapPinIcon />
-  //       </Marker>
-  //     )),
-  //   []
-  // );
 
   return (
     <>
-      <div className="h-96 w-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden">
+      <div className="relative h-96 w-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden">
+        {isPending && (
+          <div className="absolute inset-0 bg-black/70 animate-pulse z-50" />
+        )}
         <MapBox
           ref={mapref}
           {...viewState}
@@ -73,7 +59,7 @@ export function Map({ accessToken }: Props) {
               draggable
             />
           )}
-          {/* {zonePins} */}
+          {placesPins}
           {hotelPins}
           {popupInfo && (
             <Popup

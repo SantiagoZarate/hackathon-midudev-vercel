@@ -1,9 +1,9 @@
-import { getLocations } from "@/api/location";
+import { getHoteles } from "@/api/location";
 import { MapIcon } from "@/components/icons/MapIcon";
 import { Map } from "./Map";
 
 export default async function Page() {
-  const locations = await getLocations();
+  const locations = await getHoteles();
 
   return (
     <>

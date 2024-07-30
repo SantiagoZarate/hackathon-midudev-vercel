@@ -3,8 +3,9 @@ import { useMemo, useRef, useState } from "react";
 import { MapRef, Marker } from "react-map-gl";
 import { Location } from "@/types/evento";
 import * as turf from "@turf/turf";
-import { getLocations } from "@/api/location";
+import { getHoteles, getPlaces } from "@/api/location";
 import { HotelIcon } from "lucide-react";
+import { MapPinIcon } from "@/components/icons/MapPinIcon";
 
 interface Coordinate {
   lat: number;
@@ -17,6 +18,7 @@ const lngCenter = -58.68465843536305;
 export function useMap() {
   const mapref = useRef<MapRef>(null);
   const [hoteles, setHoteles] = useState<Location[]>([]);
+  const [places, setPlaces] = useState<Location[]>([]);
   const [popupInfo, setPopupInfo] = useState<Location | null>(null);
   const [location, setLocation] = useState<Coordinate | null>(null);
   const [viewState, setViewState] = useState({
@@ -25,6 +27,7 @@ export function useMap() {
     zoom: 11,
     pitch: 50,
   });
+  const [isPending, setIsPending] = useState(false);
 
   const [circleRadius, setCircleRadius] = useState<{
     circle: any;
@@ -40,7 +43,7 @@ export function useMap() {
   const onCreateRadius = async () => {
     if (!location || !mapref.current) return;
 
-    const radius = 5;
+    const radius = 10;
     const center = [location.lng, location.lat];
 
     var circle = turf.circle(center, radius, {
@@ -59,9 +62,17 @@ export function useMap() {
       duration: 3000,
     });
 
-    const results = await getLocations();
-    console.log(results);
-    setHoteles(results);
+    setIsPending(true);
+    getHoteles().then((res) => {
+      setHoteles(res);
+    });
+    getPlaces()
+      .then((res) => {
+        setPlaces(res);
+      })
+      .finally(() => {
+        setIsPending(false);
+      });
   };
 
   const handleUpdateLocation = (event: MapMouseEvent) => {
@@ -94,6 +105,25 @@ export function useMap() {
     [hoteles]
   );
 
+  const placesPins = useMemo(
+    () =>
+      places.map((place) => (
+        <Marker
+          key={`marker-${place.nombre}`}
+          longitude={place.coordenadas.lng}
+          latitude={place.coordenadas.lat}
+          anchor="bottom"
+          onClick={(e) => {
+            e.originalEvent.stopPropagation();
+            setPopupInfo(place);
+          }}
+        >
+          <MapPinIcon />
+        </Marker>
+      )),
+    [places]
+  );
+
   return {
     mapref,
     popupInfo,
@@ -106,6 +136,8 @@ export function useMap() {
     setViewState,
     setPopupInfo,
     hotelPins,
+    placesPins,
     onClearMap,
+    isPending,
   };
 }
