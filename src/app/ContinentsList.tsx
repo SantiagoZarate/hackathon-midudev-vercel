@@ -1,12 +1,14 @@
-import continents from "../api/continents.json";
 import { CountryButton } from "@/components/CountryButton";
-import { Coordinate } from "@/types/coordinate";
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/ui/accordion";
+import { getContinentIcon } from "@/lib/getContinentIcon";
+import { Coordinate } from "@/types/coordinate";
+import { Continents } from "@/types/evento";
+import continents from "../api/continents.json";
 
 interface Props {
   onChangeCity: (data: Coordinate) => void;
@@ -23,7 +25,10 @@ export function ContinentsList({ onChangeCity }: Props) {
       {continents.map((continent, index) => (
         <AccordionItem key={continent.name} value={`item-${index}`}>
           <AccordionTrigger className="capitalize">
-            {continent.name}
+            <div className="flex gap-2 items-center">
+              {getContinentIcon(continent.name as Continents)}
+              {continent.name}
+            </div>
           </AccordionTrigger>
           <AccordionContent className="grid grid-cols-2 gap-2">
             {continent.countries.map((country) => (

@@ -29,3 +29,5 @@ export interface Country {
   lng: number;
   imagen: string;
 }
+
+export type Continents = "europe" | "america" | "asia" | "africa";
