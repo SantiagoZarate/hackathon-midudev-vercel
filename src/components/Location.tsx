@@ -1,9 +1,8 @@
 import { GoToType } from "@/types/coordinate";
 import { type Location } from "@/types/evento";
+import { ClipboardIcon } from "./icons/ClipboardIcon";
 import { MarkIcon } from "./icons/MarkIcon";
 import { CountryWrapper } from "./motion/CountryWrapper";
-import { MapPinIcon } from "./icons/MapPinIcon";
-import { ClipboardIcon } from "./icons/ClipboardIcon";
 
 interface Props {
   location: Location;

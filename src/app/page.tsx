@@ -1,10 +1,8 @@
-import { getHoteles } from "@/api/location";
 import { MapIcon } from "@/components/icons/MapIcon";
 import { Map } from "./Map";
+import { QueryProvider } from "./QueryProvider";
 
 export default async function Page() {
-  const locations = await getHoteles();
-
   return (
     <>
       <header className="flex flex-col gap-1">
@@ -18,10 +16,9 @@ export default async function Page() {
           </span>
           <p>Choose your next destination</p>
         </header>
-        <Map
-          accessToken={process.env.MAPBOX_ACCESS_TOKEN!}
-          // locations={locations}
-        />
+        <QueryProvider>
+          <Map accessToken={process.env.MAPBOX_ACCESS_TOKEN!} />
+        </QueryProvider>
       </section>
     </>
   );
