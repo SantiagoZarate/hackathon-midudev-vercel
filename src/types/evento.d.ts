@@ -5,14 +5,14 @@ export interface APIResponse {
 }
 
 export interface BaseLocation {
-  nombre: string;
-  descripcion: string;
+  name: string;
+  description: string;
 }
 
 export interface Location extends BaseLocation {
-  distancia_aproximada_en_km: number;
-  ubicacion_exacta: string;
-  coordenadas: {
+  aproximate_distance_in_km: number;
+  exact_location: string;
+  coordinates: {
     lat: number;
     lng: number;
   };

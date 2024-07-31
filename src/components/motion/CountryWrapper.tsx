@@ -1,7 +1,5 @@
 import { Variants, motion } from "framer-motion";
-import { ComponentProps } from "react";
-
-interface Props extends ComponentProps<"button"> {}
+import React, { PropsWithChildren } from "react";
 
 const itemVariants: Variants = {
   visible: {
@@ -16,18 +14,23 @@ const itemVariants: Variants = {
   },
 };
 
-export function CountryWrapper(args: Props) {
-  return (
-    <motion.button
-      variants={itemVariants}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      layout
-      onClick={args.onClick}
-      className="relative flex items-center gap-2 p-2 hover:bg-white/20 rounded-lg group"
-    >
-      {args.children}
-    </motion.button>
-  );
+interface Props extends PropsWithChildren {
+  onClick: () => void;
 }
+
+export const CountryWrapper = React.forwardRef<HTMLLIElement, Props>(
+  ({ onClick, children }, ref) => (
+    <motion.li
+      className="relative flex items-center gap-2 p-2 hover:bg-white/20 rounded-lg group"
+      variants={itemVariants}
+      onClick={onClick}
+      animate="visible"
+      initial="hidden"
+      exit="hidden"
+      ref={ref}
+      layout
+    >
+      {children}
+    </motion.li>
+  )
+);

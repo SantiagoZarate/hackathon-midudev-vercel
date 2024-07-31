@@ -21,13 +21,17 @@ export function ContinentsList({ onChangeCity }: Props) {
       className="w-full"
     >
       {continents.map((continent, index) => (
-        <AccordionItem value={`item-${index}`}>
+        <AccordionItem key={continent.name} value={`item-${index}`}>
           <AccordionTrigger className="capitalize">
             {continent.name}
           </AccordionTrigger>
           <AccordionContent className="grid grid-cols-2 gap-2">
             {continent.countries.map((country) => (
-              <CountryButton country={country} onChangeCity={onChangeCity} />
+              <CountryButton
+                key={country.pais}
+                country={country}
+                onChangeCity={onChangeCity}
+              />
             ))}
           </AccordionContent>
         </AccordionItem>

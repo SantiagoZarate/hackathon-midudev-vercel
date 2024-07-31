@@ -1,11 +1,11 @@
-import { getHoteles, getPlaces, getEvents } from "@/api/location";
-import { HotelIcon, MapPinIcon } from "lucide-react";
-import { Marker } from "react-map-gl";
-import { useMemo } from "react";
-import { useQueries, useQueryClient } from "@tanstack/react-query";
-import { TQueries } from "@/types/fetchedData";
+import { getEvents, getHoteles, getPlaces } from "@/api/location";
 import { Coordinate } from "@/types/coordinate";
 import { Location } from "@/types/evento";
+import { TQueries } from "@/types/fetchedData";
+import { useQueries, useQueryClient } from "@tanstack/react-query";
+import { HotelIcon, MapPinIcon } from "lucide-react";
+import { useMemo } from "react";
+import { Marker } from "react-map-gl";
 
 interface Props {
   coordinate: Coordinate;
@@ -40,23 +40,27 @@ export function useFetchedData({ coordinate, onClickMarker }: Props) {
 
   const removePlace = (name: string) => {
     cachedData.setQueryData(["places"], (prevData: Location[]) => {
-      return prevData.filter((p) => p.nombre !== name);
+      return prevData.filter((p) => p.name !== name);
     });
   };
 
   const removeHotel = (name: string) => {
     cachedData.setQueryData(["hoteles"], (prevData: Location[]) => {
-      return prevData.filter((p) => p.nombre !== name);
+      return prevData.filter((p) => p.name !== name);
     });
+  };
+
+  const onClearData = () => {
+    cachedData.clear();
   };
 
   const hotelPins = useMemo(
     () =>
       hotelesQuery.data?.map((hotel) => (
         <Marker
-          key={`marker-${hotel.nombre}`}
-          longitude={hotel.coordenadas.lng}
-          latitude={hotel.coordenadas.lat}
+          key={`marker-${hotel.name}`}
+          longitude={hotel.coordinates.lng}
+          latitude={hotel.coordinates.lat}
           anchor="bottom"
           onClick={(e) => {
             e.originalEvent.stopPropagation();
@@ -73,9 +77,9 @@ export function useFetchedData({ coordinate, onClickMarker }: Props) {
     () =>
       placesQuery.data?.map((place) => (
         <Marker
-          key={`marker-${place.nombre}`}
-          longitude={place.coordenadas.lng}
-          latitude={place.coordenadas.lat}
+          key={`marker-${place.name}`}
+          longitude={place.coordinates.lng}
+          latitude={place.coordinates.lat}
           anchor="bottom"
           onClick={(e) => {
             e.originalEvent.stopPropagation();
@@ -96,5 +100,6 @@ export function useFetchedData({ coordinate, onClickMarker }: Props) {
     placesPins,
     removePlace,
     removeHotel,
+    onClearData,
   };
 }

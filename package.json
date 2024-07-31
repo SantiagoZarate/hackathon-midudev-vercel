@@ -22,7 +22,10 @@
     "react-dom": "^18",
     "react-map-gl": "7.1.7",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "3.23.8",
+    "zsa": "0.5.1",
+    "zsa-react": "0.2.2"
   },
   "devDependencies": {
     "@types/mapbox-gl": "3.1.0",

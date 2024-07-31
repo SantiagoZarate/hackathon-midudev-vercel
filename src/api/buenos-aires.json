@@ -1,81 +1,81 @@
 {
   "zonas_de_interes": [
     {
-      "nombre": "Obelisco de Buenos Aires",
-      "descripcion": "Uno de los monumentos más icónicos de la ciudad, ubicado en la Plaza de la República.",
-      "distancia_aproximada_en_km": 0.0,
-      "ubicacion_exacta": "Av. 9 de Julio s/n, C1043 CABA, Argentina",
-      "coordenadas": {
+      "name": "Obelisco de Buenos Aires",
+      "description": "Uno de los monumentos más icónicos de la ciudad, ubicado en la Plaza de la República.",
+      "aproximate_distance_in_km": 0.0,
+      "exact_location": "Av. 9 de Julio s/n, C1043 CABA, Argentina",
+      "coordinates": {
         "lat": -34.6037,
         "lng": -58.3816
       }
     },
     {
-      "nombre": "Casa Rosada",
-      "descripcion": "La sede del Poder Ejecutivo de la República Argentina.",
-      "distancia_aproximada_en_km": 1.17,
-      "ubicacion_exacta": "Balcarce 50, C1064 CABA, Argentina",
-      "coordenadas": {
+      "name": "Casa Rosada",
+      "description": "La sede del Poder Ejecutivo de la República Argentina.",
+      "aproximate_distance_in_km": 1.17,
+      "exact_location": "Balcarce 50, C1064 CABA, Argentina",
+      "coordinates": {
         "lat": -34.6081,
         "lng": -58.37
       }
     },
     {
-      "nombre": "Teatro Colón",
-      "descripcion": "Uno de los teatros de ópera más importantes del mundo.",
-      "distancia_aproximada_en_km": 0.34,
-      "ubicacion_exacta": "Cerrito 628, C1010 CABA, Argentina",
-      "coordenadas": {
+      "name": "Teatro Colón",
+      "description": "Uno de los teatros de ópera más importantes del mundo.",
+      "aproximate_distance_in_km": 0.34,
+      "exact_location": "Cerrito 628, C1010 CABA, Argentina",
+      "coordinates": {
         "lat": -34.6013,
         "lng": -58.3839
       }
     },
     {
-      "nombre": "Catedral Metropolitana de Buenos Aires",
-      "descripcion": "Principal iglesia católica de Buenos Aires.",
-      "distancia_aproximada_en_km": 0.94,
-      "ubicacion_exacta": "San Martín 27, C1004 CABA, Argentina",
-      "coordenadas": {
+      "name": "Catedral Metropolitana de Buenos Aires",
+      "description": "Principal iglesia católica de Buenos Aires.",
+      "aproximate_distance_in_km": 0.94,
+      "exact_location": "San Martín 27, C1004 CABA, Argentina",
+      "coordinates": {
         "lat": -34.6085,
         "lng": -58.3732
       }
     },
     {
-      "nombre": "Museo Nacional de Bellas Artes",
-      "descripcion": "Principal museo de arte de Argentina.",
-      "distancia_aproximada_en_km": 1.99,
-      "ubicacion_exacta": "Av. del Libertador 1473, C1425AAA CABA, Argentina",
-      "coordenadas": {
+      "name": "Museo Nacional de Bellas Artes",
+      "description": "Principal museo de arte de Argentina.",
+      "aproximate_distance_in_km": 1.99,
+      "exact_location": "Av. del Libertador 1473, C1425AAA CABA, Argentina",
+      "coordinates": {
         "lat": -34.5875,
         "lng": -58.391
       }
     },
     {
-      "nombre": "Plaza de Mayo",
-      "descripcion": "Plaza principal de Buenos Aires y escenario de muchos eventos históricos.",
-      "distancia_aproximada_en_km": 1.15,
-      "ubicacion_exacta": "Av. Hipólito Yrigoyen s/n, C1087 CABA, Argentina",
-      "coordenadas": {
+      "name": "Plaza de Mayo",
+      "description": "Plaza principal de Buenos Aires y escenario de muchos eventos históricos.",
+      "aproximate_distance_in_km": 1.15,
+      "exact_location": "Av. Hipólito Yrigoyen s/n, C1087 CABA, Argentina",
+      "coordinates": {
         "lat": -34.6082,
         "lng": -58.3703
       }
     },
     {
-      "nombre": "Puerto Madero",
-      "descripcion": "Uno de los barrios más modernos y exclusivos de Buenos Aires.",
-      "distancia_aproximada_en_km": 2.29,
-      "ubicacion_exacta": "Puerto Madero, Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Puerto Madero",
+      "description": "Uno de los barrios más modernos y exclusivos de Buenos Aires.",
+      "aproximate_distance_in_km": 2.29,
+      "exact_location": "Puerto Madero, Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.617,
         "lng": -58.3625
       }
     },
     {
-      "nombre": "Palermo",
-      "descripcion": "Barrio popular conocido por sus parques, jardines y vida nocturna.",
-      "distancia_aproximada_en_km": 5.85,
-      "ubicacion_exacta": "Palermo, Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Palermo",
+      "description": "Barrio popular conocido por sus parques, jardines y vida nocturna.",
+      "aproximate_distance_in_km": 5.85,
+      "exact_location": "Palermo, Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.5748,
         "lng": -58.435
       }
@@ -83,51 +83,51 @@
   ],
   "hoteles": [
     {
-      "nombre": "Hotel NH Collection Buenos Aires Centro Histórico",
-      "descripcion": "Ubicado en el corazón de Buenos Aires, cerca de importantes puntos turísticos como la Casa Rosada y el Cabildo.",
-      "distancia_aproximada_en_km": 1.2,
-      "ubicacion_exacta": "Bolívar 160, C1066 Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Hotel NH Collection Buenos Aires Centro Histórico",
+      "description": "Ubicado en el corazón de Buenos Aires, cerca de importantes puntos turísticos como la Casa Rosada y el Cabildo.",
+      "aproximate_distance_in_km": 1.2,
+      "exact_location": "Bolívar 160, C1066 Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.6096,
         "lng": -58.373
       }
     },
     {
-      "nombre": "Hilton Buenos Aires",
-      "descripcion": "Un hotel de lujo situado en Puerto Madero, con vistas al río y modernas instalaciones.",
-      "distancia_aproximada_en_km": 1.8,
-      "ubicacion_exacta": "Macacha Güemes 351, C1106BKG Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Hilton Buenos Aires",
+      "description": "Un hotel de lujo situado en Puerto Madero, con vistas al río y modernas instalaciones.",
+      "aproximate_distance_in_km": 1.8,
+      "exact_location": "Macacha Güemes 351, C1106BKG Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.6095,
         "lng": -58.3655
       }
     },
     {
-      "nombre": "InterContinental Buenos Aires",
-      "descripcion": "Elegante hotel que combina historia y modernidad, ubicado cerca de importantes centros culturales.",
-      "distancia_aproximada_en_km": 0.9,
-      "ubicacion_exacta": "Moreno 809, C1091AAQ Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "InterContinental Buenos Aires",
+      "description": "Elegante hotel que combina historia y modernidad, ubicado cerca de importantes centros culturales.",
+      "aproximate_distance_in_km": 0.9,
+      "exact_location": "Moreno 809, C1091AAQ Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.609,
         "lng": -58.38
       }
     },
     {
-      "nombre": "Alvear Art Hotel",
-      "descripcion": "Hotel boutique con sofisticadas habitaciones y servicios de alta gama, ubicado en el barrio de Retiro.",
-      "distancia_aproximada_en_km": 1.5,
-      "ubicacion_exacta": "Suipacha 1036, C1008AAV Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Alvear Art Hotel",
+      "description": "Hotel boutique con sofisticadas habitaciones y servicios de alta gama, ubicado en el barrio de Retiro.",
+      "aproximate_distance_in_km": 1.5,
+      "exact_location": "Suipacha 1036, C1008AAV Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.5983,
         "lng": -58.3827
       }
     },
     {
-      "nombre": "Four Seasons Hotel Buenos Aires",
-      "descripcion": "Lujoso hotel con elegantes habitaciones y una excelente ubicación en el barrio de Recoleta.",
-      "distancia_aproximada_en_km": 2.3,
-      "ubicacion_exacta": "Posadas 1086, C1011ABB Buenos Aires, Argentina",
-      "coordenadas": {
+      "name": "Four Seasons Hotel Buenos Aires",
+      "description": "Lujoso hotel con elegantes habitaciones y una excelente ubicación en el barrio de Recoleta.",
+      "aproximate_distance_in_km": 2.3,
+      "exact_location": "Posadas 1086, C1011ABB Buenos Aires, Argentina",
+      "coordinates": {
         "lat": -34.5916,
         "lng": -58.3836
       }
@@ -135,14 +135,14 @@
   ],
   "eventos": [
     {
-      "nombre": "Festival La Rural",
-      "descripcion": "Evento para la familia",
-      "fecha": "May 26"
+      "name": "Festival La Rural",
+      "description": "Evento para la familia",
+      "fecha": "exact_location26"
     },
     {
-      "nombre": "Festival La Rural",
-      "descripcion": "Evento para la familia",
-      "fecha": "May 26"
+      "name": "Feria del libro",
+      "description": "Evento para la familia",
+      "fecha": "exact_location26"
     }
   ]
 }
