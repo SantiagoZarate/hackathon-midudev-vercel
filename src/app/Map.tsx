@@ -128,11 +128,16 @@ export function Map({ accessToken }: Props) {
           onRemoveHotel={removeHotel}
           onRemovePlace={removePlace}
         />
-        <section>
-          <ButtonIcon onClick={() => handleGenerateLink()} icon={<LinkIcon />}>
-            Generate Link
-          </ButtonIcon>
-        </section>
+        {placesQuery.data && (
+          <section>
+            <ButtonIcon
+              onClick={() => handleGenerateLink()}
+              icon={<LinkIcon />}
+            >
+              Generate Link
+            </ButtonIcon>
+          </section>
+        )}
       </article>
       <ContinentsList onChangeCity={onChangeCity} />
     </section>
