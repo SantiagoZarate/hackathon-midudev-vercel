@@ -16,7 +16,7 @@ export function CountryButton({ onChangeCity, country }: Props) {
           lng: country.lng,
         })
       }
-      className="group relative rounded-lg h-10 overflow-hidden border border-neutral-800"
+      className="group relative rounded-lg h-10 overflow-hidden border border-border"
     >
       <div className="absolute z-10 inset-0 bg-gradient-to-r from-neutral-950 to-transparent flex gap-1 items-center px-4">
         {country.pais}

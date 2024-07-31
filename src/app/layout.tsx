@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { PropsWithChildren } from "react";
 import "./globals.css";
+import { Text } from "@/components/ui/text";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,16 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <section className="min-h-[100dvh] grid  grid-rows-[1fr_auto] max-w-screen-2xl mx-auto px-6 ">
           <main className="pt-20 flex flex-col gap-4 pb-12">{children}</main>
           <footer className="border-t border-border w-full pt-2 pb-6">
-            this is a footer
+            <Text intent={"detail"}>
+              Made by{" "}
+              <a className="underline" href="www.youtube.com" target="_blank">
+                Santiago Zarate
+              </a>{" "}
+              powered by{" "}
+              <a className="underline" href="www.youtube.com" target="_blank">
+                Mapbox
+              </a>{" "}
+            </Text>
           </footer>
         </section>
       </body>

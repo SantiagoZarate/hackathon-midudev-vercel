@@ -132,5 +132,17 @@
         "lng": -58.3836
       }
     }
+  ],
+  "eventos": [
+    {
+      "nombre": "Festival La Rural",
+      "descripcion": "Evento para la familia",
+      "fecha": "May 26"
+    },
+    {
+      "nombre": "Festival La Rural",
+      "descripcion": "Evento para la familia",
+      "fecha": "May 26"
+    }
   ]
 }

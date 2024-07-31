@@ -9,12 +9,14 @@ interface Props {
   location: Location;
   onRemoveLocation: (name: string) => void;
   onGoToLocation: (data: GoToType) => void;
+  icon: JSX.Element;
 }
 
 export function Location({
   location,
   onRemoveLocation,
   onGoToLocation,
+  icon,
 }: Props) {
   return (
     <CountryWrapper
@@ -26,7 +28,7 @@ export function Location({
         })
       }
     >
-      <MapPinIcon />
+      <span className="w-fit">{icon}</span>
       <div className="flex flex-col gap-1">
         <header className="flex items-center gap-2">
           <p className="font-bold text-sm capitalize truncate max-w-[200px]">
@@ -36,7 +38,9 @@ export function Location({
             {location.distancia_aproximada_en_km} KM
           </p>
         </header>
-        <p className="text-xs text-start">{location.ubicacion_exacta}</p>
+        <p className="text-xs text-start  truncate max-w-[300px]">
+          {location.ubicacion_exacta}
+        </p>
       </div>
       <div className="flex-col absolute inset-0 z-10 right-0 flex items-end gap p-1 group-hover:opacity-100 opacity-0">
         <button

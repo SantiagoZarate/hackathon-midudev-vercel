@@ -1,9 +1,9 @@
 import { MapMouseEvent } from "mapbox-gl";
 import { useMemo, useRef, useState } from "react";
 import { MapRef, Marker } from "react-map-gl";
-import { Location } from "@/types/evento";
+import { Event, Location } from "@/types/evento";
 import * as turf from "@turf/turf";
-import { getHoteles, getPlaces } from "@/api/location";
+import { getEvents, getHoteles, getPlaces } from "@/api/location";
 import { HotelIcon } from "lucide-react";
 import { MapPinIcon } from "@/components/icons/MapPinIcon";
 import { Coordinate, GoToType } from "../types/coordinate";
@@ -15,6 +15,7 @@ export function useMap() {
   const mapref = useRef<MapRef>(null);
   const [hoteles, setHoteles] = useState<Location[]>([]);
   const [places, setPlaces] = useState<Location[]>([]);
+  const [events, setEvents] = useState<Event[]>([]);
   const [popupInfo, setPopupInfo] = useState<Location | null>(null);
   const [location, setLocation] = useState<Coordinate | null>(null);
   const [viewState, setViewState] = useState({
@@ -57,6 +58,9 @@ export function useMap() {
     getHoteles().then((res) => {
       setHoteles(res);
     });
+    getEvents().then((res) => {
+      setEvents(res);
+    });
     getPlaces()
       .then((res) => {
         setPlaces(res);
@@ -75,6 +79,7 @@ export function useMap() {
     setLocation(null);
     setHoteles([]);
     setPlaces([]);
+    setEvents([]);
     setCircleRadius(null);
   };
 
@@ -147,6 +152,7 @@ export function useMap() {
     isPending,
     hoteles,
     places,
+    events,
     removePlace,
     goTo,
   };

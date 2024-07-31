@@ -14,6 +14,10 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import MapBox, { Marker, NavigationControl, Popup } from "react-map-gl";
 import continents from "../api/continents.json";
 import { CircleRadius } from "./CircleRadius";
+import { HotelIcon } from "@/components/icons/HotelIcon";
+import { MapPinIcon } from "@/components/icons/MapPinIcon";
+import { Text } from "@/components/ui/text";
+import { CalendarIcon } from "@/components/icons/CalendarIcon";
 
 interface Props {
   accessToken: string;
@@ -54,6 +58,7 @@ export function Map({ accessToken }: Props) {
     hotelPins,
     onClearMap,
     placesPins,
+    events,
     isPending,
     hoteles,
     places,
@@ -64,7 +69,7 @@ export function Map({ accessToken }: Props) {
   return (
     <section className="grid grid-cols-4 gap-4">
       <article className="col-span-3 flex flex-col gap-4">
-        <div className="relative h-96 w-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden">
+        <div className="relative h-96 w-full bg-neutral-900 border border-border rounded-xl overflow-hidden">
           {isPending && (
             <div className="absolute inset-0 bg-black/70 animate-pulse z-50" />
           )}
@@ -107,21 +112,24 @@ export function Map({ accessToken }: Props) {
         </div>
         <div className="flex gap-2">
           <button
-            className="border w-full border-neutral-800 rounded-lg py-2 disabled:opacity-50"
+            className="border w-full border-border rounded-lg py-2 disabled:opacity-50"
             onClick={() => onCreateRadius()}
             disabled={location === null || isPending}
           >
             Generate circle radius
           </button>
           <button
-            className="border w-full border-neutral-800 rounded-lg py-2"
+            className="border w-full border-border rounded-lg py-2"
             onClick={onClearMap}
           >
             clear
           </button>
         </div>
-        <ul className="grid grid-cols-3 gap-4">
-          <motion.ul variants={parentVariants} className="flex flex-col gap-2">
+        <ul className="grid grid-cols-3 divide-x divide-neutral-800">
+          <motion.ul
+            variants={parentVariants}
+            className="flex flex-col gap-2 pr-4"
+          >
             <AnimatePresence mode="popLayout">
               {places.map((place) => (
                 <Location
@@ -129,10 +137,46 @@ export function Map({ accessToken }: Props) {
                   location={place}
                   onGoToLocation={goTo}
                   onRemoveLocation={removePlace}
+                  icon={<MapPinIcon />}
                 />
               ))}
             </AnimatePresence>
           </motion.ul>
+          <motion.ul
+            variants={parentVariants}
+            className="flex flex-col gap-2 px-4"
+          >
+            <AnimatePresence mode="popLayout">
+              {hoteles.map((place) => (
+                <Location
+                  key={place.nombre}
+                  location={place}
+                  onGoToLocation={goTo}
+                  onRemoveLocation={removePlace}
+                  icon={<HotelIcon />}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.ul>
+          <ul className="pl-4 flex flex-col gap-4">
+            {events.map((event) => (
+              <li
+                key={event.nombre}
+                className="border border-border rounded-lg p-4 flex flex-col gap-3"
+              >
+                <header className="flex gap-2 items-center">
+                  <span className="w-fit">
+                    <CalendarIcon />
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <Text intent={"title"}>{event.nombre}</Text>
+                    <Text intent={"detail"}>{event.fecha}</Text>
+                  </div>
+                </header>
+                <Text intent={"detail"}>{event.descripcion}</Text>
+              </li>
+            ))}
+          </ul>
         </ul>
       </article>
       <Accordion

@@ -18,6 +18,10 @@ export interface Location extends BaseLocation {
   };
 }
 
+export interface Event extends BaseLocation {
+  fecha: string;
+}
+
 export interface Country {
   pais: string;
   ciudad: string;
