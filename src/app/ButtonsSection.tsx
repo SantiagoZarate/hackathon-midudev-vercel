@@ -1,6 +1,6 @@
 import { MarkIcon } from "@/components/icons/MarkIcon";
 import { SparkleMiniIcon } from "@/components/icons/SparkleMiniIcon";
-import { Button } from "@/components/ui/button";
+import { ButtonIcon } from "@/components/ui/button";
 
 interface Props {
   onFetchResults: () => void;
@@ -15,14 +15,20 @@ export function ButtonsSection({
 }: Props) {
   return (
     <section className="flex gap-2">
-      <Button onClick={() => onFetchResults()} disabled={isPending}>
-        <SparkleMiniIcon />
+      <ButtonIcon
+        onClick={() => onFetchResults()}
+        disabled={isPending}
+        icon={<SparkleMiniIcon />}
+      >
         Generate circle radius
-      </Button>
-      <Button className="w-fit" onClick={() => onClearMap()}>
-        <MarkIcon />
+      </ButtonIcon>
+      <ButtonIcon
+        className="w-fit"
+        onClick={() => onClearMap()}
+        icon={<MarkIcon />}
+      >
         Clear
-      </Button>
+      </ButtonIcon>
     </section>
   );
 }
