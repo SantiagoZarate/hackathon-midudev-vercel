@@ -5,13 +5,12 @@ import { RoadtripRepository } from "@/repository/roadtripRepository";
 import { RoadtripService } from "@/services/roadtripService";
 import { redirect } from "next/navigation";
 import { ZSAError, createServerAction } from "zsa";
-import { db } from "../../../drizzle";
 
 export const generateLink = createServerAction()
   .input(linkDataSchema)
   .handler(async ({ input }) => {
     console.log("SENDING DATA INSIDE OF SERVER ACTION");
-    const roadtripService = new RoadtripService(new RoadtripRepository(db));
+    const roadtripService = new RoadtripService(new RoadtripRepository());
     let roadtripFingerprint;
 
     try {

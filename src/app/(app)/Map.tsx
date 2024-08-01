@@ -71,6 +71,10 @@ export function Map({ accessToken }: Props) {
       events: eventosQuery.data ?? [],
       hotels: hotelesQuery.data ?? [],
       places: placesQuery.data ?? [],
+      coordinates: {
+        lat: location?.lat!,
+        lng: location?.lng!,
+      },
     });
   };
 

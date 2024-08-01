@@ -22,6 +22,10 @@ export const linkDataSchema = z.object({
   places: location.array().optional(),
   hotels: location.array().optional(),
   events: event.array().optional(),
+  coordinates: z.object({
+    lat: z.coerce.number(),
+    lng: z.coerce.number(),
+  }),
 });
 
 export type LinkDataSchema = z.infer<typeof linkDataSchema>;

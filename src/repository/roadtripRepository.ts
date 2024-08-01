@@ -7,7 +7,11 @@ import { roadtripSchema } from "../../drizzle/schemas/roadtrip";
 import { DrzRoadtrip } from "../../drizzle/types";
 
 export class RoadtripRepository {
-  constructor(private _db: typeof db) {}
+  private _db: typeof db;
+
+  constructor() {
+    this._db = db;
+  }
 
   async insert(data: LinkDataSchema): Promise<DrzRoadtrip["fingerprint"]> {
     return await this._db.transaction(async (tx) => {
@@ -15,8 +19,8 @@ export class RoadtripRepository {
       const [{ fingerprint }] = await tx
         .insert(roadtripSchema)
         .values({
-          lat: 1,
-          lng: 1,
+          lat: data.coordinates.lat,
+          lng: data.coordinates.lng,
         })
         .returning({ fingerprint: roadtripSchema.fingerprint });
 
