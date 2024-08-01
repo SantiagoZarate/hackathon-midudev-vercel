@@ -1,6 +1,6 @@
-import { MarkIcon } from "@/components/icons/MarkIcon";
-import { SparkleMiniIcon } from "@/components/icons/SparkleMiniIcon";
-import { ButtonIcon } from "@/components/ui/button";
+import { MarkIcon } from "@/app/components/icons/MarkIcon";
+import { SparkleMiniIcon } from "@/app/components/icons/SparkleMiniIcon";
+import { ButtonIcon } from "@/app/components/ui/button";
 
 interface Props {
   onFetchResults: () => void;

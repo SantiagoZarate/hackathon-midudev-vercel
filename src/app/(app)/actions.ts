@@ -1,21 +1,24 @@
 "use server";
 
 import { linkDataSchema } from "@/lib/zod-schema-validation/linkDataSchema";
-import { revalidatePath } from "next/cache";
+import { RoadtripRepository } from "@/repository/roadtripRepository";
+import { RoadtripService } from "@/services/roadtripService";
 import { redirect } from "next/navigation";
 import { ZSAError, createServerAction } from "zsa";
+import { db } from "../../../drizzle";
 
 export const generateLink = createServerAction()
   .input(linkDataSchema)
   .handler(async ({ input }) => {
     console.log("SENDING DATA INSIDE OF SERVER ACTION");
-    console.log(input);
+    const roadtripService = new RoadtripService(new RoadtripRepository(db));
+    let roadtripFingerprint;
+
     try {
+      roadtripFingerprint = roadtripService.create(input);
     } catch (error) {
       return new ZSAError("ERROR", error);
     }
 
-    return "SERVER ACTION EXECUTED";
-    // revalidatePath("/");
-    // redirect("/");
+    redirect(`/roadtrip/${roadtripFingerprint}`);
   });

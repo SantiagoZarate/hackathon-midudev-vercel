@@ -1,7 +1,7 @@
-import { AfricaIcon } from "@/components/icons/AfricaIcon";
-import { AmericaIcon } from "@/components/icons/AmericaIcon";
-import { AsiaIcon } from "@/components/icons/AsiaIcon";
-import { EuropeIcon } from "@/components/icons/EuropeIcon";
+import { AfricaIcon } from "@/app/components/icons/AfricaIcon";
+import { AmericaIcon } from "@/app/components/icons/AmericaIcon";
+import { AsiaIcon } from "@/app/components/icons/AsiaIcon";
+import { EuropeIcon } from "@/app/components/icons/EuropeIcon";
 import { Continents } from "@/types/evento";
 
 export function getContinentIcon(name: Continents) {

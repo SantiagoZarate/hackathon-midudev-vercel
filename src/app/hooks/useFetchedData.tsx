@@ -1,4 +1,4 @@
-import { getEvents, getHoteles, getPlaces } from "@/api/location";
+import { getEvents, getHoteles, getPlaces } from "@/app/api/location";
 import { Coordinate } from "@/types/coordinate";
 import { Location } from "@/types/evento";
 import { TQueries } from "@/types/fetchedData";

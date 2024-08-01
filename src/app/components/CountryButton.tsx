@@ -1,5 +1,5 @@
 import { RightArrowMicroIcon } from "./icons/RightArrowMicroIcon";
-import { type Coordinate } from "../types/coordinate";
+import { type Coordinate } from "../../types/coordinate";
 import { Country, Location } from "@/types/evento";
 
 interface Props {

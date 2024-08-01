@@ -1,9 +1,9 @@
 "use client";
 
-import { LinkIcon } from "@/components/icons/LinkIcon";
-import { ButtonIcon } from "@/components/ui/button";
-import { useFetchedData } from "@/hooks/useFetchedData";
-import { useMap } from "@/hooks/useMap";
+import { LinkIcon } from "@/app/components/icons/LinkIcon";
+import { ButtonIcon } from "@/app/components/ui/button";
+import { useFetchedData } from "@/app/hooks/useFetchedData";
+import { useMap } from "@/app/hooks/useMap";
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapBox, { Marker, NavigationControl, Popup } from "react-map-gl";
 import { useServerAction } from "zsa-react";

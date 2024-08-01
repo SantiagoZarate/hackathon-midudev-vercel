@@ -3,7 +3,7 @@ import * as turf from "@turf/turf";
 import { MapMouseEvent } from "mapbox-gl";
 import { useRef, useState } from "react";
 import { MapRef } from "react-map-gl";
-import { Coordinate, GoToType } from "../types/coordinate";
+import { Coordinate, GoToType } from "../../types/coordinate";
 
 const latCenter = -34.472495652359854;
 const lngCenter = -58.68465843536305;

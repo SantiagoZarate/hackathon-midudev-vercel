@@ -1,9 +1,9 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { Location } from "@/components/Location";
-import { MapPinIcon } from "@/components/icons/MapPinIcon";
-import { HotelIcon } from "@/components/icons/HotelIcon";
-import { CalendarIcon } from "@/components/icons/CalendarIcon";
-import { Text } from "@/components/ui/text";
+import { Location } from "@/app/components/Location";
+import { MapPinIcon } from "@/app/components/icons/MapPinIcon";
+import { HotelIcon } from "@/app/components/icons/HotelIcon";
+import { CalendarIcon } from "@/app/components/icons/CalendarIcon";
+import { Text } from "@/app/components/ui/text";
 import { useQueryClient } from "@tanstack/react-query";
 import { Event, type Location as LocationType } from "@/types/evento";
 import { GoToType } from "@/types/coordinate";

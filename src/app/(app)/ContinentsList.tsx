@@ -1,10 +1,10 @@
-import { CountryButton } from "@/components/CountryButton";
+import { CountryButton } from "@/app/components/CountryButton";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/app/components/ui/accordion";
 import { getContinentIcon } from "@/lib/getContinentIcon";
 import { Coordinate } from "@/types/coordinate";
 import { Continents } from "@/types/evento";

@@ -1,4 +1,4 @@
-import { MapIcon } from "@/components/icons/MapIcon";
+import { MapIcon } from "@/app/components/icons/MapIcon";
 import { Map } from "./Map";
 import { QueryProvider } from "./QueryProvider";
 
