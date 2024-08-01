@@ -1,8 +1,6 @@
-import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
-import { eventSchema } from "./schemas/event";
-import { locationSchema } from "./schemas/location";
-import { roadtripSchema } from "./schemas/roadtrip";
+import { drizzle } from "drizzle-orm/libsql";
+import schema from "./schemas";
 
 const client = createClient({
   url: process.env.TURSO_CONNECTION_URL!,
@@ -11,9 +9,5 @@ const client = createClient({
 
 export const db = drizzle(client, {
   logger: true,
-  schema: {
-    event: eventSchema,
-    location: locationSchema,
-    roadtrip: roadtripSchema,
-  },
+  schema,
 });

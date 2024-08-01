@@ -2,8 +2,8 @@ CREATE TABLE `event` (
 	`id` text PRIMARY KEY NOT NULL,
 	`name` text NOT NULL,
 	`date` text NOT NULL,
-	`roadtripFingerprint` text,
-	FOREIGN KEY (`roadtripFingerprint`) REFERENCES `roadtrip`(`fingerprint`) ON UPDATE no action ON DELETE no action
+	`roadtripFingerprint` text NOT NULL,
+	FOREIGN KEY (`roadtripFingerprint`) REFERENCES `roadtrip`(`fingerprint`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
 CREATE TABLE `location` (
@@ -15,8 +15,8 @@ CREATE TABLE `location` (
 	`lat` integer NOT NULL,
 	`lng` integer NOT NULL,
 	`type` text NOT NULL,
-	`roadtripFingerprint` text,
-	FOREIGN KEY (`roadtripFingerprint`) REFERENCES `roadtrip`(`fingerprint`) ON UPDATE no action ON DELETE no action
+	`roadtripFingerprint` text NOT NULL,
+	FOREIGN KEY (`roadtripFingerprint`) REFERENCES `roadtrip`(`fingerprint`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
 CREATE TABLE `roadtrip` (

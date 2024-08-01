@@ -1,10 +1,14 @@
 import { LinkDataSchema } from "@/lib/zod-schema-validation/linkDataSchema";
-import { sql } from "drizzle-orm";
 import { db } from "../../drizzle";
 import { eventSchema } from "../../drizzle/schemas/event";
 import { locationSchema } from "../../drizzle/schemas/location";
-import { roadtripSchema } from "../../drizzle/schemas/roadtrip";
+import {
+  roadtripRelations,
+  roadtripSchema,
+} from "../../drizzle/schemas/roadtrip";
 import { DrzRoadtrip } from "../../drizzle/types";
+import { eventRelations } from "../../drizzle/schemas/event";
+import { locationRelations } from "../../drizzle/schemas/location";
 
 export class RoadtripRepository {
   private _db: typeof db;
@@ -66,15 +70,24 @@ export class RoadtripRepository {
     });
   }
 
-  async getOne(id: DrzRoadtrip["fingerprint"]): Promise<DrzRoadtrip> {
-    const [result] = await this._db
-      .select()
-      .from(roadtripSchema)
-      .where(sql`${roadtripSchema.fingerprint} = ${id}`);
+  async getOne(id: DrzRoadtrip["fingerprint"]) {
+    console.log("FETCHING ROADTRIP");
+
+    const result = await this._db.query.roadtripSchema
+      .findFirst({
+        where: ({ fingerprint }, { eq }) => eq(fingerprint, id!),
+        // with: {
+        //   locationSchema: true,
+        //   event: true,
+        // },
+      })
+      .execute();
 
     if (!result) {
       throw new Error(`Roadtrip with fingerprint ${id} not found.`);
     }
+
+    console.log(result);
 
     return result;
   }

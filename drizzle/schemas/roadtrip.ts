@@ -1,5 +1,8 @@
+import { relations } from "drizzle-orm";
 import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 import { nanoid } from "nanoid";
+import { eventSchema } from "./event";
+import { locationSchema } from "./location";
 
 export const roadtripSchema = sqliteTable("roadtrip", {
   fingerprint: text("fingerprint")
@@ -9,7 +12,7 @@ export const roadtripSchema = sqliteTable("roadtrip", {
   lng: integer("lng").notNull(),
 });
 
-// export const roadtripRelations = relations(roadtripSchema, ({ many }) => ({
-//   locations: many(locationSchema),
-//   events: many(eventSchema),
-// }));
+export const roadtripRelations = relations(roadtripSchema, ({ many }) => ({
+  location: many(locationSchema, { relationName: "location" }),
+  event: many(eventSchema, { relationName: "event" }),
+}));

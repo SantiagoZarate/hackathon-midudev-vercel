@@ -14,14 +14,15 @@ export const locationSchema = sqliteTable("location", {
   lat: integer("lat").notNull(),
   lng: integer("lng").notNull(),
   type: text("type").notNull(),
-  roadtripFingerprint: text("roadtripFingerprint").references(
-    () => roadtripSchema.fingerprint
-  ),
+  roadtripFingerprint: text("roadtripFingerprint")
+    .references(() => roadtripSchema.fingerprint, { onDelete: "cascade" })
+    .notNull(),
 });
 
-// export const locationRelation = relations(locationSchema, ({ one }) => ({
-//   roadtrip: one(roadtripSchema, {
-//     fields: [locationSchema.roadtripFingerprint],
-//     references: [roadtripSchema.fingerprint],
-//   }),
-// }));
+export const locationRelations = relations(locationSchema, ({ one }) => ({
+  roadtrip: one(roadtripSchema, {
+    fields: [locationSchema.roadtripFingerprint],
+    references: [roadtripSchema.fingerprint],
+    relationName: "roadtrip",
+  }),
+}));

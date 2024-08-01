@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "aa460328-d88e-4bb7-b489-1140b4bd5301",
+  "id": "8a516f03-ef5b-413b-85bd-4abb0f3fb461",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "event": {
@@ -32,7 +32,7 @@
           "name": "roadtripFingerprint",
           "type": "text",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },
@@ -48,7 +48,7 @@
           "columnsTo": [
             "fingerprint"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -118,7 +118,7 @@
           "name": "roadtripFingerprint",
           "type": "text",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },
@@ -134,7 +134,7 @@
           "columnsTo": [
             "fingerprint"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
