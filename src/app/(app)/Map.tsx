@@ -6,18 +6,19 @@ import { useFetchedData } from "@/app/hooks/useFetchedData";
 import { useMap } from "@/app/hooks/useMap";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
-import { AnimatePresence, motion } from "framer-motion";
+import { type Location } from "@/types/evento";
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapBox, { Marker, NavigationControl, Popup } from "react-map-gl";
 import { useServerAction } from "zsa-react";
+import { LoadingMessage } from "../components/Mapbox/LoadingMessage";
 import { ArrowUpRightIcon } from "../components/icons/ArrowUpRightIcon";
 import { Text } from "../components/ui/text";
+import { usePins } from "../hooks/usePins";
 import { ButtonsSection } from "./ButtonsSection";
 import { CircleRadius } from "./CircleRadius";
 import { ContinentsList } from "./ContinentsList";
 import { LocationsSection } from "./LocationsSection";
 import { generateLink } from "./actions";
-import { LoadingMessage } from "../components/Mapbox/LoadingMessage";
 
 interface Props {
   accessToken: string;
@@ -42,15 +43,18 @@ export function Map({ accessToken }: Props) {
 
   const {
     eventosQuery,
-    hotelPins,
     hotelesQuery,
-    placesPins,
     placesQuery,
     removePlace,
     removeHotel,
     onClearData,
   } = useFetchedData({
     coordinate: { lat: location?.lat!, lng: location?.lng! },
+  });
+
+  const { hotelPins, placesPins, setSelectedPin } = usePins({
+    hotels: hotelesQuery.data ?? [],
+    places: placesQuery.data ?? [],
     onClickMarker: onUpdatePopupInfo,
   });
 
@@ -73,6 +77,7 @@ export function Map({ accessToken }: Props) {
       toast({
         title: "Ooops there was an error!"
       })
+
     },
     onSuccess: ({ data: { fingerprint } }) => {
       toast({
@@ -95,6 +100,15 @@ export function Map({ accessToken }: Props) {
       })
     }
   });
+
+  const handleSelectLocation = (data: Location) => {
+    goTo({
+      lat: data.coordinates.lat,
+      lng: data.coordinates.lng,
+      zoom: 16
+    })
+    setSelectedPin(data)
+  }
 
   const handleGenerateLink = async () => {
     await execute({
@@ -157,7 +171,7 @@ export function Map({ accessToken }: Props) {
             isPending={location === null || placesQuery.isFetching}
           />
           <LocationsSection
-            onGoToLocation={goTo}
+            onGoToLocation={handleSelectLocation}
             onRemoveHotel={removeHotel}
             onRemovePlace={removePlace}
           />

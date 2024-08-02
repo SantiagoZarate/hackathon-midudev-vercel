@@ -30,7 +30,7 @@ const parentVariants: Variants = {
 interface Props {
   onRemovePlace: (name: string) => void;
   onRemoveHotel: (name: string) => void;
-  onGoToLocation: (data: GoToType) => void;
+  onGoToLocation: (data: LocationType) => void;
 }
 
 export function LocationsSection({

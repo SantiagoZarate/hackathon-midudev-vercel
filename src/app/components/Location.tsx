@@ -1,5 +1,4 @@
 import React from "react";
-import { GoToType } from "@/types/coordinate";
 import { type Location as LocationType } from "@/types/evento";
 import { ClipboardIcon } from "./icons/ClipboardIcon";
 import { MarkIcon } from "./icons/MarkIcon";
@@ -8,7 +7,7 @@ import { CountryWrapper } from "./motion/CountryWrapper";
 interface Props {
   location: LocationType;
   onRemoveLocation: (name: string) => void;
-  onGoToLocation: (data: GoToType) => void;
+  onGoToLocation: (data: LocationType) => void;
   icon: JSX.Element;
 }
 
@@ -21,11 +20,7 @@ export function Location({
   return (
     <CountryWrapper
       onClick={() =>
-        onGoToLocation({
-          lat: location.coordinates.lat,
-          lng: location.coordinates.lng,
-          zoom: 16,
-        })
+        onGoToLocation(location)
       }
     >
       <span className="w-fit">{icon}</span>
