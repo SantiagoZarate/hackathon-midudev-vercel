@@ -13,6 +13,6 @@ export const roadtripSchema = sqliteTable("roadtrip", {
 });
 
 export const roadtripRelations = relations(roadtripSchema, ({ many }) => ({
-  location: many(locationSchema, { relationName: "location" }),
-  event: many(eventSchema, { relationName: "event" }),
+  locations: many(locationSchema),
+  events: many(eventSchema),
 }));

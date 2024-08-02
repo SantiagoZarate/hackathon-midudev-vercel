@@ -3,12 +3,9 @@ import { db } from "../../drizzle";
 import { eventSchema } from "../../drizzle/schemas/event";
 import { locationSchema } from "../../drizzle/schemas/location";
 import {
-  roadtripRelations,
-  roadtripSchema,
+  roadtripSchema
 } from "../../drizzle/schemas/roadtrip";
 import { DrzRoadtrip } from "../../drizzle/types";
-import { eventRelations } from "../../drizzle/schemas/event";
-import { locationRelations } from "../../drizzle/schemas/location";
 
 export class RoadtripRepository {
   private _db: typeof db;
@@ -76,10 +73,10 @@ export class RoadtripRepository {
     const result = await this._db.query.roadtripSchema
       .findFirst({
         where: ({ fingerprint }, { eq }) => eq(fingerprint, id!),
-        // with: {
-        //   locationSchema: true,
-        //   event: true,
-        // },
+        with: {
+          locations: true,
+          events: true,
+        },
       })
       .execute();
 

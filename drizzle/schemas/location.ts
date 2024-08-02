@@ -4,16 +4,14 @@ import { roadtripSchema } from "./roadtrip";
 import { nanoid } from "nanoid";
 
 export const locationSchema = sqliteTable("location", {
-  id: text("id")
-    .primaryKey()
-    .$defaultFn(() => nanoid()),
+  id: text("id").primaryKey().$defaultFn(() => nanoid()),
   name: text("name").notNull(),
-  description: text("description").notNull(),
   exact_location: text("exact_location").notNull(),
   aproximate_distance_in_km: integer("aproximate_distance_in_km").notNull(),
   lat: integer("lat").notNull(),
   lng: integer("lng").notNull(),
   type: text("type").notNull(),
+  description: text("description").notNull(),
   roadtripFingerprint: text("roadtripFingerprint")
     .references(() => roadtripSchema.fingerprint, { onDelete: "cascade" })
     .notNull(),

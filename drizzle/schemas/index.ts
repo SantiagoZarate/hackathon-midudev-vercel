@@ -1,9 +1,12 @@
-import { eventSchema } from "./event";
-import { locationSchema } from "./location";
-import { roadtripSchema } from "./roadtrip";
+import { eventRelations, eventSchema } from './event'
+import { locationRelations, locationSchema } from './location'
+import { roadtripRelations, roadtripSchema } from './roadtrip'
 
 export default {
-  eventSchema,
   locationSchema,
   roadtripSchema,
+  roadtripRelations,
+  locationRelations,
+  eventSchema,
+  eventRelations,
 };
