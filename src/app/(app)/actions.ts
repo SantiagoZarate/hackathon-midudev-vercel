@@ -1,23 +1,29 @@
 "use server";
 
-import { linkDataSchema } from "@/lib/zod-schema-validation/linkDataSchema";
+import { linkDataSchema, outputGenerateLink } from "@/lib/zod-schema-validation/linkDataSchema";
 import { RoadtripRepository } from "@/repository/roadtripRepository";
 import { RoadtripService } from "@/services/roadtripService";
-import { redirect } from "next/navigation";
 import { ZSAError, createServerAction } from "zsa";
 
 export const generateLink = createServerAction()
   .input(linkDataSchema)
   .handler(async ({ input }) => {
-    console.log("SENDING DATA INSIDE OF SERVER ACTION");
-    const roadtripService = new RoadtripService(new RoadtripRepository());
-    let roadtripFingerprint;
+    await new Promise((resolve) => setTimeout(() => { resolve({}) }, 3000))
 
-    try {
-      roadtripFingerprint = roadtripService.create(input);
-    } catch (error) {
-      return new ZSAError("ERROR", error);
+    return {
+      fingerprint: "fingerrrr"
     }
 
-    redirect(`/roadtrip/${roadtripFingerprint}`);
+    console.log("SENDING DATA INSIDE OF SERVER ACTION");
+    const roadtripService = new RoadtripService(new RoadtripRepository());
+    let fingerprint;
+    try {
+      fingerprint = roadtripService.create(input);
+    } catch (error) {
+      // return new ZSAError("ERROR", error);
+    }
+
+    return {
+      fingerprint
+    }
   });

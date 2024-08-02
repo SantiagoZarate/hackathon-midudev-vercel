@@ -29,3 +29,7 @@ export const linkDataSchema = z.object({
 });
 
 export type LinkDataSchema = z.infer<typeof linkDataSchema>;
+
+export const outputGenerateLink = z.object({
+  fingerprint: z.string()
+})
