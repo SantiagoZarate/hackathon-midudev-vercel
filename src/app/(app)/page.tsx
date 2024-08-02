@@ -1,5 +1,5 @@
 import { MapIcon } from "@/app/components/icons/MapIcon";
-import { Map } from "./Map";
+import { Map } from "../components/Mapbox/Map";
 import { QueryProvider } from "./QueryProvider";
 
 export default async function Page() {

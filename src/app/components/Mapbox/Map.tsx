@@ -4,21 +4,21 @@ import { LinkIcon } from "@/app/components/icons/LinkIcon";
 import { ButtonIcon } from "@/app/components/ui/button";
 import { useFetchedData } from "@/app/hooks/useFetchedData";
 import { useMap } from "@/app/hooks/useMap";
-import { Toaster } from "@/components/ui/toaster";
-import { useToast } from "@/components/ui/use-toast";
+import { Toaster } from "@/app/components/ui/toaster";
+import { useToast } from "@/app/components/ui/use-toast";
 import { type Location } from "@/types/evento";
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapBox, { Marker, NavigationControl, Popup } from "react-map-gl";
 import { useServerAction } from "zsa-react";
-import { LoadingMessage } from "../components/Mapbox/LoadingMessage";
-import { ArrowUpRightIcon } from "../components/icons/ArrowUpRightIcon";
-import { Text } from "../components/ui/text";
-import { usePins } from "../hooks/usePins";
+import { LoadingMessage } from "./LoadingMessage";
+import { ArrowUpRightIcon } from "../icons/ArrowUpRightIcon";
+import { Text } from "../ui/text";
+import { usePins } from "../../hooks/usePins";
 import { ButtonsSection } from "./ButtonsSection";
 import { CircleRadius } from "./CircleRadius";
 import { ContinentsList } from "./ContinentsList";
 import { LocationsSection } from "./LocationsSection";
-import { generateLink } from "./actions";
+import { generateLink } from "../../(app)/actions";
 
 interface Props {
   accessToken: string;
@@ -108,6 +108,7 @@ export function Map({ accessToken }: Props) {
       zoom: 16
     })
     setSelectedPin(data)
+    onUpdatePopupInfo(data)
   }
 
   const handleGenerateLink = async () => {

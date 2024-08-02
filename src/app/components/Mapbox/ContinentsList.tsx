@@ -8,7 +8,7 @@ import {
 import { getContinentIcon } from "@/lib/getContinentIcon";
 import { Coordinate } from "@/types/coordinate";
 import { Continents } from "@/types/evento";
-import continents from "../api/continents.json";
+import continents from "../../api/continents.json";
 
 interface Props {
   onChangeCity: (data: Coordinate) => void;
