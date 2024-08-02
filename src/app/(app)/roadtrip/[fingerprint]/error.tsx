@@ -4,7 +4,7 @@ import { SadFaceIcon } from "@/app/components/icons/SadFaceIcon"
 import { Text } from "@/app/components/ui/text"
 import { useParams } from "next/navigation"
 
-export default function errorPage({ error }: { error: Error }) {
+export default function ErrorPage({ error }: { error: Error }) {
   const { fingerprint } = useParams()
   console.error(error)
 

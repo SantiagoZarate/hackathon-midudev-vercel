@@ -22,7 +22,7 @@ export function LoadingMessage({ isLoading }: Props) {
             }}
             initial={{ scale: 3, filter: 'blur(10px)' }}
           >
-            Let me see what i've got for you
+            Let me see what ive got for you
           </motion.p>
         </motion.div>
       )}

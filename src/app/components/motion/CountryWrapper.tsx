@@ -34,3 +34,5 @@ export const CountryWrapper = React.forwardRef<HTMLLIElement, Props>(
     </motion.li>
   )
 );
+
+CountryWrapper.displayName = "CountryWrapper";
