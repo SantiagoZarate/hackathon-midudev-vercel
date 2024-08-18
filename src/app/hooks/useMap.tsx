@@ -23,10 +23,6 @@ export function useMap() {
     line: any;
   } | null>(null);
 
-  console.log("LOCATION:");
-  console.log(location);
-
-
   const onChangeCity = ({ lat, lng }: Coordinate) => {
     goTo({ lat, lng });
     setLocation({ lat, lng });

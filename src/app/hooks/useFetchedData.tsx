@@ -3,10 +3,6 @@ import { Coordinate } from "@/types/coordinate";
 import { Location } from "@/types/evento";
 import { TQueries } from "@/types/fetchedData";
 import { useQueries, useQueryClient } from "@tanstack/react-query";
-import { HotelIcon, MapPinIcon } from "lucide-react";
-import { useMemo } from "react";
-import { Marker } from "react-map-gl";
-import { HotelFillIcon } from "../components/icons/HotelFillIcon";
 
 interface Props {
   coordinate: Coordinate;
@@ -53,10 +49,6 @@ export function useFetchedData({ coordinate }: Props) {
   const onClearData = () => {
     cachedData.clear();
   };
-
-  console.log(hotelesQuery.data)
-
-
 
   return {
     hotelesQuery,

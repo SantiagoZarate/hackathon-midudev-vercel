@@ -18,7 +18,8 @@ import { ButtonsSection } from "./ButtonsSection";
 import { CircleRadius } from "./CircleRadius";
 import { ContinentsList } from "./ContinentsList";
 import { LocationsSection } from "./LocationsSection";
-import { generateLink } from "../../(app)/actions";
+import { generateData, generateLink } from "../../(app)/actions";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface Props {
   accessToken: string;
@@ -58,10 +59,29 @@ export function Map({ accessToken }: Props) {
     onClickMarker: onUpdatePopupInfo,
   });
 
-  const fetchResults = () => {
+  const fetchData = useServerAction(generateData, {
+    onError: ({ err }) => {
+      toast({ title: "Error getting results", description: err.message })
+    }
+  })
+
+  const clientData = useQueryClient()
+
+  const fetchResults = async () => {
     onCreateRadius();
+    const [data, err] = await fetchData.execute({
+      lat: location?.lat!,
+      lng: location?.lng!
+    })
+
+    console.log("DESDE EL CLIENTE");
+    console.log(data)
+    clientData.setQueryData(["hoteles"], () => {
+      return data
+    })
+
     placesQuery.refetch();
-    hotelesQuery.refetch();
+    // hotelesQuery.refetch();
     eventosQuery.refetch();
   };
 
@@ -128,7 +148,7 @@ export function Map({ accessToken }: Props) {
       <section className="grid grid-cols-4 gap-4">
         <article className="col-span-3 flex flex-col gap-4">
           <div className="relative h-96 w-full bg-neutral-900 border border-border rounded-xl overflow-hidden">
-            <LoadingMessage isLoading={placesQuery.isFetching} />
+            <LoadingMessage isLoading={fetchData.isPending} />
             <MapBox
               ref={mapref}
               {...viewState}

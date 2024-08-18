@@ -2,7 +2,7 @@ import { Coordinate } from "@/types/coordinate";
 import bsas from "./buenos-aires.json";
 import { Event, Location } from "@/types/evento";
 
-export async function getHoteles(data: Coordinate): Promise<Location[]> {
+export async function getHoteles({ lat, lng }: Coordinate): Promise<Location[]> {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve(bsas.hoteles);
